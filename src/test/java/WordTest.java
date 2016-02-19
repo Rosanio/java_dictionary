@@ -35,6 +35,7 @@ public class WordTest {
   public void addDefinition_addsNewInstanceOfDefinitionToWord() {
     Word newWord = new Word("programming");
     Definition newDefinition = new Definition("An easy job for slackers");
-    assertEquals(true, newWord.getDefinition.contains(newDefinition));
+    newWord.addDefinition(newDefinition);
+    assertEquals(true, newWord.getDefinitions().contains(newDefinition));
   }
 }
