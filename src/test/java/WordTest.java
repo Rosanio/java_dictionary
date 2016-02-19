@@ -38,4 +38,15 @@ public class WordTest {
     newWord.addDefinition(newDefinition);
     assertEquals(true, newWord.getDefinitions().contains(newDefinition));
   }
+
+  @Test
+  public void getDefinition_assertThatDefinitionListForOneWordDoesNotContainDefinitionsForAnother() {
+    Word newWord1 = new Word("albino");
+    Word newWord2 = new Word("honkeytonk");
+    Definition newDefinition1 = new Definition("really white");
+    Definition newDefinition2 = new Definition("I have no idea");
+    newWord1.addDefinition(newDefinition1);
+    newWord2.addDefinition(newDefinition2);
+    assertEquals(false, newWord1.getDefinitions().contains(newDefinition2));
+  }
 }
