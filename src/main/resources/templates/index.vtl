@@ -2,7 +2,7 @@
 <h3>Here's a list of all the words I know!</h3>
 <ul>
   #foreach($word in $words)
-  <li><a href="/$word.getId()">$word</a></li>
+  <li><a href="/$word.getId()">$word.getWord()</a></li>
   #end
 </ul>
 <a href="/addWord">Teach me a new word here</a>
