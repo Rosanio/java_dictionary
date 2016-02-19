@@ -6,4 +6,8 @@ public class Definition {
   public Definition(String definition) {
     mDefinition = definition;
   }
+
+  public String getDefinition() {
+    return mDefinition;
+  }
 }
