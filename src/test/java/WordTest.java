@@ -30,4 +30,11 @@ public class WordTest {
     Word newWord = new Word("headbutt");
     assertEquals(true, newWord.getDefinitions() instanceof ArrayList);
   }
+
+  @Test
+  public void addDefinition_addsNewInstanceOfDefinitionToWord() {
+    Word newWord = new Word("programming");
+    Definition newDefinition = new Definition("An easy job for slackers");
+    assertEquals(true, newWord.getDefinition.contains(newDefinition));
+  }
 }
