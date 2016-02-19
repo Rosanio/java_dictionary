@@ -33,4 +33,24 @@ public class AppTest extends FluentTest {
     click("a", withText("Teach me a new word here"));
     assertThat(pageSource()).contains("Add a New Word");
   }
+
+  @Test
+  public void displayWord() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Teach me a new word here"));
+    fill("#newWord").with("platypus");
+    submit(".btn");
+    assertThat(pageSource()).contains("platypus");
+  }
+
+  @Test
+  public void wordPage() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Teach me a new word here"));
+    fill("#newWord").with("platypus");
+    submit(".btn");
+    click("a", withText("platypus"));
+    assertThat(pageSource()).contains("platypus");
+  }
+
 }

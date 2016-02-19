@@ -77,4 +77,14 @@ public class WordTest {
     assertEquals(1, (int)newWord.getId());
     assertEquals(2, (int)newWord2.getId());
   }
+
+  @Test
+  public void findWord_getWordById() {
+    Word.clearWords();
+    Word newWord = new Word("pleb");
+    Word newWord2 = new Word("machine");
+    Word newWord3 = new Word("table");
+    assertEquals(newWord2, Word.find(2));
+    assertEquals(newWord3, Word.find(3));
+  }
 }

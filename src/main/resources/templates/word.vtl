@@ -1,0 +1,13 @@
+<h1>$word</h1>
+<h3>Definitions:</h3>
+#if($definitions)
+#foreach($definition in $definitions)
+  <p>$definition</p>
+#end
+#end
+<br>
+<a href="/">Return to home page</a>
+<br>
+<a href="/addDefinition">Add a new definition</a>
+<br>
+<a href="/clearDefinitions">Clear all definitions</a>

@@ -1,8 +1,12 @@
 <h1>Rosanio Dictionary</h1>
 <h3>Here's a list of all the words I know!</h3>
 <ul>
+  #if($words)
   #foreach($word in $words)
   <li><a href="/$word.getId()">$word.getWord()</a></li>
   #end
+  #end
 </ul>
 <a href="/addWord">Teach me a new word here</a>
+<br>
+<a href="/clearWords">Clear all words from list</a>

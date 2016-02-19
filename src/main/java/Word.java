@@ -41,4 +41,13 @@ public class Word {
   public Integer getId() {
     return mId;
   }
+
+  public static Word find(Integer id) {
+    try{
+      return words.get(id-1);
+    } catch(IndexOutOfBoundsException e) {
+      System.err.println("IndexOutOfBoundsException: " + e.getMessage());
+      return null;
+    }
+  }
 }
