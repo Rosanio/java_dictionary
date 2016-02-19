@@ -68,4 +68,13 @@ public class WordTest {
     newWord.clearDefinitions();
     assertEquals(0, newWord.getDefinitions().size());
   }
+
+  @Test
+  public void getWordId_returnsIdOfAWord() {
+    Word.clearWords();
+    Word newWord = new Word("coffee");
+    Word newWord2 = new Word("tea");
+    assertEquals(1, (int)newWord.getId());
+    assertEquals(2, (int)newWord2.getId());
+  }
 }
