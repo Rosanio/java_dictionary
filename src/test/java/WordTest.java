@@ -87,4 +87,14 @@ public class WordTest {
     assertEquals(newWord2, Word.find(2));
     assertEquals(newWord3, Word.find(3));
   }
+
+  @Test
+  public void removeWord_removesWordFromWordsArrayList() {
+    Word.clearWords();
+    Word newWord = new Word("pleb");
+    Word newWord2 = new Word("machine");
+    Word newWord3 = new Word("table");
+    Word.removeWord(newWord2);
+    assertEquals(false, Word.all().contains(newWord2));
+  }
 }

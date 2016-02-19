@@ -3,7 +3,7 @@
 <ul>
   #if($words)
   #foreach($word in $words)
-  <li><a href="/$word.getId()">$word.getWord()</a></li>
+  <li><a href="/$word.getId()">$word.getWord()</a>  <a class="btn btn-default remove" href="/removeWord/$word.getId()">Remove this word</a></li>
   #end
   #end
 </ul>

@@ -42,8 +42,47 @@ public class App {
     get("/:id", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       Word word = Word.find(Integer.parseInt(request.params(":id")));
-      model.put("word", word.getWord());
+      model.put("word", word);
+      model.put("definitions", word.getDefinitions());
       model.put("template", "templates/word.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/:id/addDefinition", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Word word = Word.find(Integer.parseInt(request.params(":id")));
+      model.put("word", word);
+      model.put("template", "templates/addDefinition.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      String newDefinitionTitle = request.queryParams("newDefinition");
+      Definition newDefinition = new Definition(newDefinitionTitle);
+      Word word = Word.find(Integer.parseInt(request.params(":id")));
+      word.addDefinition(newDefinition);
+      model.put("word", word);
+      model.put("definitions", word.getDefinitions());
+      model.put("template", "templates/word.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/:id/clearDefinitions", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Word word = Word.find(Integer.parseInt(request.params(":id")));
+      word.clearDefinitions();
+      model.put("word", word);
+      model.put("template", "templates/clearDefinitions.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/removeWord/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Word word = Word.find(Integer.parseInt(request.params(":id")));
+      Word.removeWord(word);
+      model.put("word", word);
+      model.put("template", "templates/removeWord.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }

@@ -50,4 +50,8 @@ public class Word {
       return null;
     }
   }
+
+  public static void removeWord(Word word) {
+    Word.all().remove(word);
+  }
 }
