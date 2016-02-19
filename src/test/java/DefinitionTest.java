@@ -10,4 +10,10 @@ public class DefinitionTest {
     Definition newDefinition = new Definition("definition");
     assertEquals(true, newDefinition instanceof Definition);
   }
+
+  @Test
+  public void getDefinition_returnsDefinitionString() {
+    Definition newDefinition = new Definition("The term for a baby platypus");
+    assertEquals("The term for a baby platypus", newDefinition.getDefinition());
+  }
 }
