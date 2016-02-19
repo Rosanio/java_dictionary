@@ -2,12 +2,14 @@ import java.util.*;
 
 public class Word {
   private static ArrayList<Word> words = new ArrayList<Word>();
+  private ArrayList<Definition> mDefinitions;
 
   private String mWord;
 
   public Word(String word) {
     mWord = word;
     words.add(this);
+    mDefinitions = new ArrayList<Definition>();
   }
 
   public String getWord() {
@@ -16,5 +18,9 @@ public class Word {
 
   public static ArrayList<Word> all() {
     return words;
+  }
+
+  public ArrayList<Definition> getDefinitions() {
+    return mDefinitions;
   }
 }

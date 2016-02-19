@@ -24,4 +24,10 @@ public class WordTest {
     assertEquals(true, Word.all().contains(newWord1));
     assertEquals(true, Word.all().contains(newWord2));
   }
+
+  @Test
+  public void getDefinition_initiallyReturnsEmptyArrayList() {
+    Word newWord = new Word("headbutt");
+    assertEquals(true, newWord.getDefinitions() instanceof ArrayList);
+  }
 }
