@@ -27,4 +27,8 @@ public class Word {
   public void addDefinition(Definition definition) {
     mDefinitions.add(definition);
   }
+
+  public static void clearWords() {
+    words = new ArrayList<Word>();
+  }
 }

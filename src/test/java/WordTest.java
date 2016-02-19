@@ -54,7 +54,7 @@ public class WordTest {
   public void clearWords_removeAllWordsFromWordArrayList() {
     Word newWord1 = new Word("rhinoceros");
     Word newWord2 = new Word("beetle");
-    Word.clear();
+    Word.clearWords();
     assertEquals(0, Word.all().size());
   }
 }
