@@ -16,4 +16,12 @@ public class WordTest {
     Word newWord = new Word("putz");
     assertEquals("putz", newWord.getWord());
   }
+
+  @Test
+  public void all_returnsArrayListOfAllInstancesOfWordClass() {
+    Word newWord1 = new Word("toaster");
+    Word newWord2 = new Word("aluminum");
+    assertEquals(true, Word.all().contains(newWord1));
+    assertEquals(true, Word.all().contains(newWord2));
+  }
 }
