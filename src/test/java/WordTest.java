@@ -57,4 +57,15 @@ public class WordTest {
     Word.clearWords();
     assertEquals(0, Word.all().size());
   }
+
+  @Test
+  public void clearDefinitions_clearsAllDefinitionsAssignedToAnInstanceOfWord() {
+    Word newWord = new Word("lightbulb");
+    Definition newDefinition1 = new Definition("A bulb which emits light");
+    Definition newDefinition2 = new Definition("The thing that appears over my head when I have an idea");
+    newWord.addDefinition(newDefinition1);
+    newWord.addDefinition(newDefinition2);
+    newWord.clearDefinitions();
+    assertEquals(0, newWord.getDefinitions().size());
+  }
 }
