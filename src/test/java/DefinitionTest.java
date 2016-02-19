@@ -5,4 +5,9 @@ import java.util.*;
 
 public class DefinitionTest {
 
+  @Test
+  public void definition_initializesCorrectly() {
+    Definition newDefinition = new Definition("definition");
+    assertEquals(true, newDefinition instanceof Definition);
+  }
 }
