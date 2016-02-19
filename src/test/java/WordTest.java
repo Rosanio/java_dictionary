@@ -49,4 +49,12 @@ public class WordTest {
     newWord2.addDefinition(newDefinition2);
     assertEquals(false, newWord1.getDefinitions().contains(newDefinition2));
   }
+
+  @Test
+  public void clearWords_removeAllWordsFromWordArrayList() {
+    Word newWord1 = new Word("rhinoceros");
+    Word newWord2 = new Word("beetle");
+    Word.clear();
+    assertEquals(0, Word.all().size());
+  }
 }
